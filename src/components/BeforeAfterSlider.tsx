@@ -39,15 +39,15 @@ export default function BeforeAfterSlider() {
   );
 
   return (
-    <section className="bg-gray-50 py-24">
+    <section className="bg-[#0B1420] py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#0076CE]">
+          <h2 className="text-3xl font-bold text-[#F8FAFC] sm:text-4xl">
             Results You Can See
-          </p>
-          <h2 className="mt-3 text-3xl font-bold text-[#052C52] sm:text-4xl">
-            Before &amp; After
           </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-[#D6DEE8]">
+            From stained carpet to dull grout lines, our cleaning process is built to produce visible improvement.
+          </p>
         </div>
 
         <div className="mx-auto max-w-4xl">
@@ -86,7 +86,7 @@ export default function BeforeAfterSlider() {
               className="absolute top-0 bottom-0 z-10 w-1 bg-white shadow-lg"
               style={{ left: `${sliderPos}%`, transform: "translateX(-50%)" }}
             >
-              <div className="absolute top-1/2 left-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-4 border-white bg-[#0076CE] shadow-lg">
+              <div className="absolute top-1/2 left-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-4 border-white bg-[#2F80ED] shadow-lg">
                 <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
                 </svg>
@@ -94,10 +94,10 @@ export default function BeforeAfterSlider() {
             </div>
 
             {/* Labels */}
-            <div className="absolute bottom-4 left-4 z-10 rounded-full bg-black/60 px-4 py-1.5 text-sm font-medium text-white backdrop-blur-sm">
+            <div className="absolute bottom-4 left-4 z-10 rounded-full bg-[#0B1420]/80 px-4 py-1.5 text-sm font-medium text-[#F8FAFC] backdrop-blur-sm">
               Before
             </div>
-            <div className="absolute bottom-4 right-4 z-10 rounded-full bg-white/80 px-4 py-1.5 text-sm font-medium text-[#052C52] backdrop-blur-sm">
+            <div className="absolute bottom-4 right-4 z-10 rounded-full bg-[#2F80ED]/90 px-4 py-1.5 text-sm font-medium text-white backdrop-blur-sm">
               After
             </div>
           </div>

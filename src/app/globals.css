@@ -1,15 +1,38 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-navy: #052C52;
-  --color-brand-sky: #0076CE;
+  --color-brand-navy: #0B1420;
+  --color-brand-sky: #2F80ED;
   --color-brand-slate: #F8FAFC;
+  --color-brand-dark: #0B1420;
+  --color-brand-surface: #111C2B;
+  --color-brand-accent: #2F80ED;
+  --color-brand-accent-hover: #1E66C7;
+  --color-brand-light: #F5F7FA;
+  --color-brand-muted: #5E6B78;
+  --color-bg-dark: #0B1420;
+  --color-surface-dark: #111C2B;
+  --color-text-primary: #F8FAFC;
+  --color-text-body: #D6DEE8;
+  --color-accent-blue: #2F80ED;
+  --color-accent-hover: #1E66C7;
+  --color-light-section: #F5F7FA;
+  --color-dark-text: #0F1720;
+  --color-muted-text: #5E6B78;
+  --color-border: rgba(255,255,255,0.08);
 }
 
 :root {
-  --navy: #052C52;
-  --sky-blue: #0076CE;
-  --white: #FFFFFF;
+  --color-bg-dark: #0B1420;
+  --color-surface-dark: #111C2B;
+  --color-text-primary: #F8FAFC;
+  --color-text-body: #D6DEE8;
+  --color-accent-blue: #2F80ED;
+  --color-accent-hover: #1E66C7;
+  --color-light-section: #F5F7FA;
+  --color-dark-text: #0F1720;
+  --color-muted-text: #5E6B78;
+  --color-border: rgba(255,255,255,0.08);
 }
 
 html {
@@ -17,8 +40,8 @@ html {
 }
 
 body {
-  background: var(--white);
-  color: var(--navy);
+  background: #0B1420;
+  color: var(--color-dark-text);
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
 }
 

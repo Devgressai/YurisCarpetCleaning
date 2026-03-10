@@ -1,108 +1,107 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
+
+const benefits = [
+  "Deep steam extraction",
+  "Pet odor and stain treatment",
+  "Owner-operated service",
+  "Fast quotes and reliable scheduling",
+];
 
 export default function HeroSection() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#052C52]">
-      {/* Video Background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 h-full w-full object-cover"
-      >
-        <source src="/videos/hero-background.mp4" type="video/mp4" />
-      </video>
-      {/* Gradient overlay on top of video */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#052C52]/70 via-[#052C52]/50 to-[#052C52]/30" />
-
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-32 text-center sm:px-6 lg:px-8">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#0076CE]"
-        >
-          Sacramento &amp; Placer County&apos;s Trusted Carpet Professional
-        </motion.p>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="mx-auto max-w-4xl text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
-        >
-          27 Years of Master
-          <br />
-          <span className="text-[#0076CE]">Carpet Care</span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-300 sm:text-xl"
-        >
-          Owner-operated by Yuri himself — no subcontractors, no shortcuts.
-          Every job gets the personal attention and master-level craftsmanship
-          your carpets deserve.
-        </motion.p>
-
-        {/* Dual CTAs */}
+    <section className="bg-[#0B1420] min-h-screen flex items-center pt-24 pb-20 px-6 md:px-12 lg:px-20">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        {/* Left Column — Text */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.45 }}
-          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <a
-            href="tel:9165550127"
-            className="inline-flex items-center gap-2 rounded-full bg-[#0076CE] px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:bg-[#005fa3] hover:shadow-xl"
-          >
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-              />
-            </svg>
-            Call Now
-          </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-white px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-white hover:text-[#052C52]"
-          >
-            Get a Free Quote
-          </a>
+          <p className="text-[#2F80ED] uppercase tracking-widest text-xs font-semibold mb-6">
+            Owner-Operated &bull; 27 Years Experience
+          </p>
+
+          <h1 className="font-[family-name:var(--font-manrope)] text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#F8FAFC] leading-[1.08] mb-6">
+            Professional Carpet &amp; Tile Cleaning Done Right
+          </h1>
+
+          <p className="text-lg text-[#D6DEE8] mb-8 max-w-xl leading-relaxed">
+            Yuri&apos;s Carpet Cleaning delivers professional carpet, tile,
+            grout, and pet odor treatment across Auburn, Rocklin, Roseville,
+            Lincoln, Loomis, Granite Bay, Folsom, and nearby areas.
+          </p>
+
+          <ul className="space-y-3 mb-10">
+            {benefits.map((item) => (
+              <li key={item} className="flex items-center gap-3 text-[#D6DEE8]">
+                <svg
+                  className="w-5 h-5 text-[#2F80ED] flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={3}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span className="text-base">{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex flex-wrap gap-4">
+            <Link
+              href="/contact"
+              className="inline-block bg-[#2F80ED] hover:bg-[#1E66C7] text-white uppercase font-semibold text-sm tracking-wider rounded-xl px-8 py-4 transition-colors"
+            >
+              Get Free Quote
+            </Link>
+            <a
+              href="tel:+19168893335"
+              className="inline-block border border-white text-white uppercase font-semibold text-sm tracking-wider rounded-xl px-8 py-4 hover:bg-white/10 transition-colors"
+            >
+              Call Now
+            </a>
+          </div>
         </motion.div>
 
-        {/* Trust Badges */}
+        {/* Right Column — Video */}
         <motion.div
+          className="relative"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.6 }}
-          className="mt-16 flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-12"
+          transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
         >
-          {[
-            { icon: "🏆", label: "27 Years Experience" },
-            { icon: "👤", label: "Owner-Operated" },
-            { icon: "✓", label: "100% Satisfaction Guaranteed" },
-          ].map((badge) => (
-            <div key={badge.label} className="flex items-center gap-3">
-              <span className="text-2xl">{badge.icon}</span>
-              <span className="text-sm font-medium tracking-wide text-white/90">
-                {badge.label}
-              </span>
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/videos/hero-background.mp4" type="video/mp4" />
+            </video>
+
+            {/* Floating trust card */}
+            <div className="absolute bottom-4 right-4 left-4 sm:left-auto sm:max-w-sm bg-[#111C2B]/80 backdrop-blur-md border border-[rgba(255,255,255,0.08)] rounded-xl px-5 py-4">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[#F8FAFC] font-medium">
+                <span>27+ Years Experience</span>
+                <span className="hidden sm:inline text-[#5E6B78]">|</span>
+                <span>Owner Operated</span>
+                <span className="hidden sm:inline text-[#5E6B78]">|</span>
+                <span>Local Trusted Service</span>
+              </div>
             </div>
-          ))}
+          </div>
         </motion.div>
       </div>
-
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
     </section>
   );
 }

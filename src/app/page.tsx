@@ -1,52 +1,60 @@
 import type { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
+import TrustBar from "@/components/TrustBar";
 import ServiceBentoGrid from "@/components/ServiceBentoGrid";
-import ProcessSection from "@/components/ProcessSection";
-import TrustSignature from "@/components/TrustSignature";
+import WhyYuris from "@/components/WhyYuris";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import RestretchingComparison from "@/components/RestretchingComparison";
-import CostComparison from "@/components/CostComparison";
+import ProcessSection from "@/components/ProcessSection";
 import { TestimonialsSection } from "@/components/TestimonialCard";
+import ServiceAreasGrid from "@/components/ServiceAreasGrid";
+import FAQ from "@/components/FAQ";
+import FinalCTA from "@/components/FinalCTA";
 import ContactForm from "@/components/ContactForm";
-import { siteMetadata } from "@/data/seo-config";
 
 export const metadata: Metadata = {
-  title: siteMetadata.defaultTitle,
-  description: siteMetadata.defaultDescription,
+  title:
+    "Yuri's Carpet Cleaning | Professional Carpet & Tile Cleaning Done Right",
+  description:
+    "27 years of owner-operated carpet cleaning, tile & grout restoration, and pet odor treatment serving Auburn, Rocklin, Roseville, and the greater Sacramento area.",
 };
 
 export default function Home() {
   return (
     <>
+      {/* 1. Header is in layout.tsx */}
+      {/* 2. Hero */}
       <HeroSection />
 
+      {/* 3. Trust Bar */}
+      <TrustBar />
+
+      {/* 4. Services */}
       <ServiceBentoGrid />
 
+      {/* 5. Why Yuri's */}
+      <WhyYuris />
+
+      {/* 6. Before / After */}
+      <BeforeAfterSlider />
+
+      {/* 7. Process */}
       <ProcessSection />
 
-      <TrustSignature />
-
-      {/* Before & After Transformation */}
-      <section className="bg-[#F8FAFC] py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-16 text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#0076CE]">
-              Real Results
-            </p>
-            <h2 className="mt-3 text-3xl font-bold text-[#052C52] sm:text-4xl">
-              See the Transformation
-            </h2>
-          </div>
-          <BeforeAfterSlider />
-        </div>
-      </section>
-
-      <RestretchingComparison />
-
-      <CostComparison />
-
+      {/* 8. Reviews */}
       <TestimonialsSection />
 
+      {/* 9. Service Areas */}
+      <ServiceAreasGrid />
+
+      {/* 10. FAQ */}
+      <FAQ />
+
+      {/* 11. Final CTA */}
+      <FinalCTA />
+
+      {/* 12. Footer is in layout.tsx */}
+
+      {/* Contact form (accessible via #contact links) */}
       <ContactForm />
     </>
   );

@@ -31,14 +31,14 @@ export default function TestimonialCard({
   rating = 5,
 }: TestimonialCardProps) {
   return (
-    <div className="flex h-full flex-col rounded-2xl border border-gray-100 bg-white p-8 shadow-sm">
+    <div className="flex h-full flex-col rounded-2xl border border-white/[0.08] bg-[#0B1420] p-8">
       <StarRating count={rating} />
-      <blockquote className="mt-4 flex-1 text-gray-700 leading-relaxed">
+      <blockquote className="mt-4 flex-1 text-[#D6DEE8] leading-relaxed">
         &ldquo;{quote}&rdquo;
       </blockquote>
-      <div className="mt-6 border-t border-gray-100 pt-4">
-        <p className="font-semibold text-[#052C52]">{name}</p>
-        <p className="text-sm text-gray-500">{city}</p>
+      <div className="mt-6 border-t border-white/[0.08] pt-4">
+        <p className="font-bold text-[#F8FAFC]">{name}</p>
+        <p className="text-sm text-[#5E6B78]">{city}</p>
       </div>
     </div>
   );
@@ -47,35 +47,35 @@ export default function TestimonialCard({
 const testimonials = [
   {
     quote:
-      "Yuri transformed our living room carpet — it looked brand new! You can tell he takes real pride in his work. As an owner-operator, he was there start to finish and didn't miss a single spot. Highly recommend his carpet cleaning service.",
+      "Yuri did an amazing job. The carpet came out far better than I expected and the whole process was professional from start to finish.",
     name: "Sarah M.",
-    city: "Roseville, CA",
+    city: "Auburn",
   },
   {
     quote:
-      "We had Yuri come out for carpet restretching in our upstairs hallway and the results were incredible. No more wrinkles or bumps. He explained everything he was doing and why — 27 years of experience really shows. Worth every penny.",
-    name: "David & Karen L.",
-    city: "Granite Bay, CA",
+      "Fast response, fair price, and excellent work. Our tile looked dramatically better.",
+    name: "Mike R.",
+    city: "Rocklin",
   },
   {
     quote:
-      "After our dog stained the carpet in three rooms, we thought we'd need to replace everything. Yuri came out, assessed the damage, and his tile and grout cleaning plus carpet repair saved us thousands. Personal service from the owner himself — that's rare these days.",
-    name: "Michael R.",
-    city: "Folsom, CA",
+      "Perfect for move-out cleaning. Stains and odor were handled better than we thought possible.",
+    name: "Jennifer L.",
+    city: "Roseville",
   },
 ];
 
 export function TestimonialsSection() {
   return (
-    <section className="bg-gray-50 py-24">
+    <section className="bg-[#111C2B] py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#0076CE]">
-            Testimonials
-          </p>
-          <h2 className="mt-3 text-3xl font-bold text-[#052C52] sm:text-4xl">
-            What Our Customers Say
+          <h2 className="text-3xl font-bold text-[#F8FAFC] sm:text-4xl">
+            What Customers Say
           </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-[#D6DEE8]">
+            Trusted by homeowners, landlords, and local clients who want quality work and dependable service.
+          </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-3">
@@ -87,6 +87,11 @@ export function TestimonialsSection() {
               city={t.city}
             />
           ))}
+        </div>
+
+        {/* Trust strip */}
+        <div className="mt-12 text-center text-sm tracking-wide text-[#5E6B78]">
+          Trusted Local Service &bull; Professional Results &bull; Fast Quotes
         </div>
       </div>
     </section>

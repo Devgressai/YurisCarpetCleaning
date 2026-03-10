@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -10,16 +10,16 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title:
-    "Yuri's Carpet Cleaning | 27 Years of Master Carpet Care in Sacramento & Placer County",
+    "Yuri's Carpet Cleaning | Professional Carpet & Tile Cleaning Done Right",
   description:
-    "Owner-operated carpet cleaning with 27 years of experience serving Auburn to Sacramento. Yuri's Carpet Cleaning delivers master-level care across Sacramento, Placer, and El Dorado Counties.",
+    "27 years of owner-operated carpet cleaning, tile & grout restoration, and pet odor treatment serving Auburn, Rocklin, Roseville, and the greater Sacramento area.",
 };
 
 const jsonLd = {
@@ -27,7 +27,7 @@ const jsonLd = {
   "@type": "LocalBusiness",
   name: "Yuri's Carpet Cleaning",
   description:
-    "Owner-operated carpet cleaning service with 27 years of experience serving Sacramento, Placer, and El Dorado Counties.",
+    "27 years of owner-operated carpet cleaning, tile & grout restoration, and pet odor treatment serving Auburn, Rocklin, Roseville, and the greater Sacramento area.",
   areaServed: [
     { "@type": "Place", name: "Sacramento County, CA" },
     { "@type": "Place", name: "Placer County, CA" },
@@ -52,7 +52,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${montserrat.variable} antialiased`}
+        className={`${inter.variable} ${manrope.variable} antialiased`}
       >
         <Navbar />
         {children}

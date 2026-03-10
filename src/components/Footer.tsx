@@ -3,55 +3,83 @@ import Link from "next/link";
 const services = [
   { name: "Carpet Cleaning", href: "/services/carpet-cleaning" },
   { name: "Tile & Grout Cleaning", href: "/services/tile-grout-cleaning" },
-  { name: "Carpet Repair", href: "/services/carpet-repair" },
-  { name: "Carpet Restretching", href: "/services/carpet-restretching" },
+  { name: "Pet Odor Treatment", href: "#" },
+  { name: "Upholstery Cleaning", href: "#" },
+  { name: "Move-Out Cleaning", href: "#" },
 ];
 
-const i80Hwy65Corridor = [
-  { name: "Meadow Vista", slug: "meadow-vista-ca" },
-  { name: "Applegate", slug: "applegate-ca" },
+const serviceAreas = [
   { name: "Auburn", slug: "auburn-ca" },
-  { name: "Newcastle", slug: "newcastle-ca" },
-  { name: "Penryn", slug: "penryn-ca" },
-  { name: "Loomis", slug: "loomis-ca" },
   { name: "Rocklin", slug: "rocklin-ca" },
   { name: "Roseville", slug: "roseville-ca" },
   { name: "Lincoln", slug: "lincoln-ca" },
-  { name: "Granite Bay", slug: "granite-bay-ca" },
-];
-
-const hwy50Sacramento = [
-  { name: "Cameron Park", slug: "cameron-park-ca" },
-  { name: "Shingle Springs", slug: "shingle-springs-ca" },
-  { name: "El Dorado Hills", slug: "el-dorado-hills-ca" },
+  { name: "Loomis", slug: "loomis-ca" },
   { name: "Folsom", slug: "folsom-ca" },
-  { name: "Orangevale", slug: "orangevale-ca" },
-  { name: "Fair Oaks", slug: "fair-oaks-ca" },
-  { name: "Carmichael", slug: "carmichael-ca" },
-  { name: "Rancho Cordova", slug: "rancho-cordova-ca" },
-  { name: "Citrus Heights", slug: "citrus-heights-ca" },
-  { name: "Antelope", slug: "antelope-ca" },
-  { name: "North Highlands", slug: "north-highlands-ca" },
-  { name: "Sacramento", slug: "sacramento-ca" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#052C52] text-white">
+    <footer className="bg-[#0B1420]">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Column 1: Brand */}
+          {/* Column 1: Logo & Description */}
           <div>
-            <Link href="/" className="text-2xl font-bold text-white">
+            <Link href="/" className="text-2xl font-bold text-[#F8FAFC]">
               Yuri&apos;s Carpet Cleaning
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-gray-300">
-              27 Years of Master Carpet Care
+            <p className="mt-4 text-sm leading-relaxed text-[#D6DEE8]">
+              Professional carpet, tile, grout, and odor treatment services with
+              27 years of hands-on experience.
             </p>
-            <div className="mt-6 space-y-3">
+          </div>
+
+          {/* Column 2: Services */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-[#F8FAFC]">
+              Services
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {services.map((service) => (
+                <li key={service.name}>
+                  <Link
+                    href={service.href}
+                    className="text-sm text-[#D6DEE8] transition-colors hover:text-[#2F80ED]"
+                  >
+                    {service.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Service Areas */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-[#F8FAFC]">
+              Service Areas
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {serviceAreas.map((city) => (
+                <li key={city.slug}>
+                  <Link
+                    href={`/service-areas/${city.slug}`}
+                    className="text-sm text-[#D6DEE8] transition-colors hover:text-[#2F80ED]"
+                  >
+                    {city.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Contact */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-[#F8FAFC]">
+              Contact
+            </h3>
+            <div className="mt-4 space-y-3">
               <a
                 href="tel:+19165550127"
-                className="flex items-center gap-3 text-sm text-gray-300 transition-colors hover:text-white"
+                className="flex items-center gap-3 text-sm text-[#D6DEE8] transition-colors hover:text-[#2F80ED]"
               >
                 <svg
                   className="h-4 w-4 shrink-0"
@@ -70,7 +98,7 @@ export default function Footer() {
               </a>
               <a
                 href="mailto:info@yuriscarpetcleaning.com"
-                className="flex items-center gap-3 text-sm text-gray-300 transition-colors hover:text-white"
+                className="flex items-center gap-3 text-sm text-[#D6DEE8] transition-colors hover:text-[#2F80ED]"
               >
                 <svg
                   className="h-4 w-4 shrink-0"
@@ -87,79 +115,60 @@ export default function Footer() {
                 </svg>
                 info@yuriscarpetcleaning.com
               </a>
+              <div className="flex items-center gap-3 text-sm text-[#D6DEE8]">
+                <svg
+                  className="h-4 w-4 shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                Mon&ndash;Sat: 7:00 AM &ndash; 6:00 PM
+              </div>
             </div>
-          </div>
-
-          {/* Column 2: Services */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
-              Our Services
-            </h3>
-            <ul className="mt-4 space-y-3">
-              {services.map((service) => (
-                <li key={service.href}>
-                  <Link
-                    href={service.href}
-                    className="text-sm text-gray-300 transition-colors hover:text-[#0076CE]"
-                  >
-                    {service.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 3: I-80 & Hwy 65 Corridor (Placer County) */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
-              I-80 &amp; Hwy 65 Corridor
-            </h3>
-            <ul className="mt-4 space-y-2">
-              {i80Hwy65Corridor.map((city) => (
-                <li key={city.slug}>
-                  <Link
-                    href={`/service-areas/${city.slug}`}
-                    className="text-sm text-gray-300 transition-colors hover:text-[#0076CE]"
-                  >
-                    {city.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 4: Hwy 50 & Sacramento */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
-              Hwy 50 &amp; Sacramento
-            </h3>
-            <ul className="mt-4 space-y-2">
-              {hwy50Sacramento.map((city) => (
-                <li key={city.slug}>
-                  <Link
-                    href={`/service-areas/${city.slug}`}
-                    className="text-sm text-gray-300 transition-colors hover:text-[#0076CE]"
-                  >
-                    {city.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
-          <p className="text-sm text-gray-400">
-            &copy; 2026 Yuri&apos;s Carpet Cleaning. All Rights Reserved.
-          </p>
-          <p className="text-sm text-gray-400">
+        <div className="mt-16 border-t border-[rgba(255,255,255,0.08)] pt-8">
+          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+            <p className="text-sm text-[#5E6B78]">
+              &copy; 2026 Yuri&apos;s Carpet Cleaning. All Rights Reserved.
+            </p>
+            <div className="flex items-center gap-6">
+              <Link
+                href="/privacy"
+                className="text-sm text-[#5E6B78] transition-colors hover:text-[#D6DEE8]"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms"
+                className="text-sm text-[#5E6B78] transition-colors hover:text-[#D6DEE8]"
+              >
+                Terms
+              </Link>
+              <Link
+                href="/sitemap.xml"
+                className="text-sm text-[#5E6B78] transition-colors hover:text-[#D6DEE8]"
+              >
+                Sitemap
+              </Link>
+            </div>
+          </div>
+          <p className="mt-4 text-center text-sm text-[#5E6B78]">
             Powered by{" "}
             <a
               href="https://webvello.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#0076CE] transition-colors hover:text-white"
+              className="text-[#2F80ED] transition-colors hover:text-[#F8FAFC]"
             >
               Webvello.com
             </a>
