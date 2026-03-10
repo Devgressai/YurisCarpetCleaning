@@ -5,9 +5,18 @@ import { motion } from "framer-motion";
 export default function HeroSection() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#052C52]">
-      {/* Background placeholder with gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#052C52] via-[#052C52]/80 to-[#052C52]/40" />
-      <div className="absolute inset-0 bg-[url('/placeholder-hero.jpg')] bg-cover bg-center opacity-30" />
+      {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 h-full w-full object-cover"
+      >
+        <source src="/videos/hero-background.mp4" type="video/mp4" />
+      </video>
+      {/* Gradient overlay on top of video */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#052C52]/70 via-[#052C52]/50 to-[#052C52]/30" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-32 text-center sm:px-6 lg:px-8">
         <motion.p
