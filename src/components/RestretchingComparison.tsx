@@ -17,20 +17,21 @@ const solutions = [
 
 export default function RestretchingComparison() {
   return (
-    <section className="py-20">
+    <section className="bg-[#0B1420] py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-0 overflow-hidden rounded-2xl shadow-lg md:grid-cols-2">
+        <div className="grid gap-0 overflow-hidden rounded-2xl border border-white/[0.08] shadow-lg md:grid-cols-2">
           {/* The Problem */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
-            className="bg-red-50 p-10 md:p-12"
+            className="bg-[#111C2B] p-10 md:p-12"
+            style={{ background: "linear-gradient(135deg, #111C2B 0%, #1a1520 100%)" }}
           >
-            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-red-100">
+            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-red-500/10">
               <svg
-                className="h-6 w-6 text-red-500"
+                className="h-6 w-6 text-red-400"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -43,7 +44,7 @@ export default function RestretchingComparison() {
                 />
               </svg>
             </div>
-            <h3 className="mb-6 text-2xl font-bold text-[#052C52]">
+            <h3 className="mb-6 text-2xl font-bold text-[#F8FAFC]">
               The Problem
             </h3>
             <ul className="space-y-4">
@@ -62,7 +63,7 @@ export default function RestretchingComparison() {
                       d="M6 18L18 6M6 6l12 12"
                     />
                   </svg>
-                  <span className="text-gray-700">{item}</span>
+                  <span className="text-[#D6DEE8]">{item}</span>
                 </li>
               ))}
             </ul>
@@ -74,11 +75,12 @@ export default function RestretchingComparison() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
-            className="bg-blue-50 p-10 md:p-12"
+            className="bg-[#111C2B] p-10 md:p-12"
+            style={{ background: "linear-gradient(135deg, #111C2B 0%, #0f1a2d 100%)" }}
           >
-            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#0076CE]/10">
+            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#2F80ED]/10">
               <svg
-                className="h-6 w-6 text-[#0076CE]"
+                className="h-6 w-6 text-[#2F80ED]"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -91,14 +93,14 @@ export default function RestretchingComparison() {
                 />
               </svg>
             </div>
-            <h3 className="mb-6 text-2xl font-bold text-[#052C52]">
+            <h3 className="mb-6 text-2xl font-bold text-[#F8FAFC]">
               The Yuri Solution
             </h3>
             <ul className="space-y-4">
               {solutions.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <svg
-                    className="mt-0.5 h-5 w-5 shrink-0 text-[#0076CE]"
+                    className="mt-0.5 h-5 w-5 shrink-0 text-[#2F80ED]"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -110,7 +112,7 @@ export default function RestretchingComparison() {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  <span className="text-gray-700">{item}</span>
+                  <span className="text-[#D6DEE8]">{item}</span>
                 </li>
               ))}
             </ul>
@@ -127,7 +129,7 @@ export default function RestretchingComparison() {
         >
           <Link
             href="/contact"
-            className="inline-block rounded-xl bg-[#0076CE] px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:bg-[#005fa3] hover:shadow-xl"
+            className="inline-block rounded-xl bg-[#2F80ED] px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:bg-[#1E66C7] hover:shadow-xl"
           >
             Save Thousands Over Replacement &mdash; Get a Repair Quote
           </Link>

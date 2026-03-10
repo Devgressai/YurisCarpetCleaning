@@ -5,12 +5,12 @@ import Image from "next/image";
 
 const trustPoints = [
   {
-    title: "27 Years of Hands-on Expertise",
+    title: "27 Years in the Field",
     description:
-      "No subcontractors. The man who owns the company is the man on the tools.",
+      "No subcontractors, no runaround. The owner does the work — every job, every time.",
     icon: (
       <svg
-        className="h-8 w-8 text-[#0076CE]"
+        className="h-8 w-8 text-[#2F80ED]"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -25,12 +25,12 @@ const trustPoints = [
     ),
   },
   {
-    title: "The Precision Guarantee",
+    title: "Built on Results",
     description:
-      "From surgical carpet patches to power-stretched restoration, every job is treated as a masterwork.",
+      "We don't cut corners. Every carpet, every tile job gets the full treatment — no shortcuts.",
     icon: (
       <svg
-        className="h-8 w-8 text-[#0076CE]"
+        className="h-8 w-8 text-[#2F80ED]"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -45,12 +45,12 @@ const trustPoints = [
     ),
   },
   {
-    title: "Local Accountability",
+    title: "Local and Accountable",
     description:
-      "We live and work in the same corridors we serve\u2014from the Auburn foothills to Downtown Sacramento.",
+      "We serve Auburn to Sacramento and stand behind every job. If there's an issue, we fix it.",
     icon: (
       <svg
-        className="h-8 w-8 text-[#0076CE]"
+        className="h-8 w-8 text-[#2F80ED]"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -83,7 +83,7 @@ const fadeInUp = {
 
 export default function TrustSignature() {
   return (
-    <section className="bg-[#F8FAFC] py-20">
+    <section className="bg-[#111C2B] py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative">
           {/* Heading */}
@@ -92,9 +92,9 @@ export default function TrustSignature() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
-            className="mx-auto max-w-3xl text-center text-3xl font-bold text-[#052C52] sm:text-4xl"
+            className="mx-auto max-w-3xl text-center text-3xl font-bold text-[#F8FAFC] sm:text-4xl"
           >
-            Your home deserves a master, not a trainee.
+            Your home deserves a pro, not a trainee.
           </motion.h2>
 
           {/* Yuri portrait + 27 YEARS seal */}
@@ -105,7 +105,7 @@ export default function TrustSignature() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="relative mx-auto mt-10 flex flex-col items-center"
           >
-            <div className="relative h-40 w-40 overflow-hidden rounded-full border-4 border-[#0076CE] shadow-lg">
+            <div className="relative h-40 w-40 overflow-hidden rounded-full border-4 border-[#2F80ED] shadow-lg">
               <Image
                 src="/images/yuri-portrait.png"
                 alt="Yuri, owner-operator of Yuri's Carpet Cleaning with 27 years of experience"
@@ -114,10 +114,10 @@ export default function TrustSignature() {
               />
             </div>
             <div className="mt-3 text-center">
-              <span className="block text-2xl font-extrabold leading-none text-[#0076CE]">
+              <span className="block text-2xl font-extrabold leading-none text-[#2F80ED]">
                 27
               </span>
-              <span className="block text-[0.65rem] font-bold uppercase tracking-widest text-[#052C52]">
+              <span className="block text-[0.65rem] font-bold uppercase tracking-widest text-[#D6DEE8]">
                 Years
               </span>
             </div>
@@ -133,15 +133,15 @@ export default function TrustSignature() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
                 variants={fadeInUp}
-                className="rounded-2xl bg-white p-8 text-center shadow-sm"
+                className="rounded-2xl border border-white/[0.08] bg-[#0B1420] p-8 text-center"
               >
-                <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#0076CE]/10">
+                <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#2F80ED]/10">
                   {point.icon}
                 </div>
-                <h3 className="mb-3 text-lg font-bold text-[#052C52]">
+                <h3 className="mb-3 text-lg font-bold text-[#F8FAFC]">
                   {point.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-gray-600">
+                <p className="text-sm leading-relaxed text-[#D6DEE8]">
                   {point.description}
                 </p>
               </motion.div>
