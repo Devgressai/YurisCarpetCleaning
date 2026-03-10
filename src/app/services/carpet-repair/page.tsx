@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import CostComparison from "@/components/CostComparison";
 import ContactForm from "@/components/ContactForm";
@@ -53,8 +54,15 @@ export default function CarpetRepairPage() {
       />
 
       {/* Hero */}
-      <section className="bg-[#052C52] py-24">
-        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-[#052C52] py-24">
+        <Image
+          src="/images/carpet-repair-service.png"
+          alt="Professional carpet repair and patching in progress"
+          fill
+          className="object-cover opacity-20"
+          priority
+        />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#0076CE]">
             Save Your Carpet
           </p>

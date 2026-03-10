@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const trustPoints = [
   {
@@ -96,15 +97,23 @@ export default function TrustSignature() {
             Your home deserves a master, not a trainee.
           </motion.h2>
 
-          {/* 27 YEARS seal */}
+          {/* Yuri portrait + 27 YEARS seal */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mx-auto mt-10 flex h-28 w-28 items-center justify-center rounded-full border-4 border-[#0076CE] bg-white shadow-lg"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="relative mx-auto mt-10 flex flex-col items-center"
           >
-            <div className="text-center">
+            <div className="relative h-40 w-40 overflow-hidden rounded-full border-4 border-[#0076CE] shadow-lg">
+              <Image
+                src="/images/yuri-portrait.png"
+                alt="Yuri, owner-operator of Yuri's Carpet Cleaning with 27 years of experience"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="mt-3 text-center">
               <span className="block text-2xl font-extrabold leading-none text-[#0076CE]">
                 27
               </span>

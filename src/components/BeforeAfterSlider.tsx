@@ -61,30 +61,24 @@ export default function BeforeAfterSlider() {
             onTouchMove={handleTouchMove}
           >
             {/* Before (full width behind) */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-400 via-gray-500 to-gray-600">
-              <div className="flex h-full items-center justify-center">
-                <div className="text-center">
-                  <div className="mx-auto mb-3 h-16 w-16 rounded-full bg-gray-700/30" />
-                  <p className="text-lg font-medium text-gray-700/60">
-                    Stained &amp; Worn Carpet
-                  </p>
-                </div>
-              </div>
+            <div className="absolute inset-0">
+              <img
+                src="/images/before-carpet.png"
+                alt="Stained and worn carpet before professional cleaning"
+                className="h-full w-full object-cover"
+              />
             </div>
 
             {/* After (clipped) */}
             <div
-              className="absolute inset-0 bg-gradient-to-br from-[#e8f4fd] via-[#cce7f8] to-[#b0d9f2]"
+              className="absolute inset-0"
               style={{ clipPath: `inset(0 0 0 ${sliderPos}%)` }}
             >
-              <div className="flex h-full items-center justify-center">
-                <div className="text-center">
-                  <div className="mx-auto mb-3 h-16 w-16 rounded-full bg-[#0076CE]/20" />
-                  <p className="text-lg font-medium text-[#052C52]/60">
-                    Fresh &amp; Restored
-                  </p>
-                </div>
-              </div>
+              <img
+                src="/images/after-carpet.png"
+                alt="Pristine carpet after professional deep cleaning by Yuri"
+                className="h-full w-full object-cover"
+              />
             </div>
 
             {/* Slider Line */}
