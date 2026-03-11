@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 const cities = [
@@ -15,32 +18,47 @@ const cities = [
 
 export default function ServiceAreasGrid() {
   return (
-    <section className="bg-[#F5F7FA] py-20 px-6 md:px-12 lg:px-20">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="font-[family-name:var(--font-manrope)] text-3xl md:text-4xl font-bold text-[#0F1720] mb-4">
-            Proudly Serving Nearby Communities
+    <section className="bg-[#F5F7FA] py-28 md:py-36">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <p className="text-[#2F80ED] text-xs font-bold uppercase tracking-widest mb-4">
+            Service Areas
+          </p>
+          <h2 className="font-[family-name:var(--font-manrope)] text-4xl md:text-5xl font-extrabold text-[#0F1720]">
+            Proudly Serving
+            <br />
+            Nearby Communities
           </h2>
-          <p className="text-[#5E6B78] text-lg max-w-2xl mx-auto leading-relaxed">
-            Professional carpet and tile cleaning throughout Placer County,
+          <p className="mt-4 text-[#5E6B78] text-lg max-w-xl mx-auto">
+            Professional carpet and tile cleaning across Placer County,
             Sacramento County, and nearby areas.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {cities.map((city) => (
-            <Link
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+          {cities.map((city, i) => (
+            <motion.div
               key={city.slug}
-              href={`/service-areas/${city.slug}`}
-              className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 group"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: i * 0.05 }}
             >
-              <h3 className="font-bold text-[#0F1720] text-lg group-hover:text-[#2F80ED] transition-colors">
-                {city.name}
-              </h3>
-              <p className="text-[#5E6B78] text-sm mt-1">
-                Carpet Cleaning in {city.name}
-              </p>
-            </Link>
+              <Link
+                href={`/service-areas/${city.slug}`}
+                className="group block text-center py-4 px-3 rounded-xl bg-white border border-gray-100 hover:border-[#2F80ED]/30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+              >
+                <span className="font-semibold text-[#0F1720] group-hover:text-[#2F80ED] transition-colors text-sm">
+                  {city.name}
+                </span>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>
