@@ -20,14 +20,15 @@ const serviceAreas = [
 export default function Footer() {
   return (
     <footer className="bg-[#0B1420]">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="divider-glow" />
+      <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20 py-20">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {/* Column 1: Logo & Description */}
           <div>
-            <Link href="/" className="text-2xl font-bold text-[#F8FAFC]">
+            <Link href="/" className="text-xl font-bold text-[#F8FAFC]">
               Yuri&apos;s Carpet Cleaning
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-[#D6DEE8]">
+            <p className="mt-5 text-sm leading-relaxed text-[#5E6B78]">
               Professional carpet, tile, grout, and odor treatment services with
               27 years of hands-on experience.
             </p>
@@ -35,15 +36,15 @@ export default function Footer() {
 
           {/* Column 2: Services */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-[#F8FAFC]">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-[#2F80ED] mb-6">
               Services
             </h3>
-            <ul className="mt-4 space-y-3">
+            <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
                   <Link
                     href={service.href}
-                    className="text-sm text-[#D6DEE8] transition-colors hover:text-[#2F80ED]"
+                    className="text-sm text-[#5E6B78] transition-colors hover:text-[#2F80ED]"
                   >
                     {service.name}
                   </Link>
@@ -54,15 +55,15 @@ export default function Footer() {
 
           {/* Column 3: Service Areas */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-[#F8FAFC]">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-[#2F80ED] mb-6">
               Service Areas
             </h3>
-            <ul className="mt-4 space-y-3">
+            <ul className="space-y-3">
               {serviceAreas.map((city) => (
                 <li key={city.slug}>
                   <Link
                     href={`/service-areas/${city.slug}`}
-                    className="text-sm text-[#D6DEE8] transition-colors hover:text-[#2F80ED]"
+                    className="text-sm text-[#5E6B78] transition-colors hover:text-[#2F80ED]"
                   >
                     {city.name}
                   </Link>
@@ -73,13 +74,13 @@ export default function Footer() {
 
           {/* Column 4: Contact */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-[#F8FAFC]">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-[#2F80ED] mb-6">
               Contact
             </h3>
-            <div className="mt-4 space-y-3">
+            <div className="space-y-3">
               <a
                 href="tel:+19165550127"
-                className="flex items-center gap-3 text-sm text-[#D6DEE8] transition-colors hover:text-[#2F80ED]"
+                className="flex items-center gap-3 text-sm text-[#5E6B78] transition-colors hover:text-[#2F80ED]"
               >
                 <svg
                   className="h-4 w-4 shrink-0"
@@ -98,7 +99,7 @@ export default function Footer() {
               </a>
               <a
                 href="mailto:info@yuriscarpetcleaning.com"
-                className="flex items-center gap-3 text-sm text-[#D6DEE8] transition-colors hover:text-[#2F80ED]"
+                className="flex items-center gap-3 text-sm text-[#5E6B78] transition-colors hover:text-[#2F80ED]"
               >
                 <svg
                   className="h-4 w-4 shrink-0"
@@ -115,7 +116,7 @@ export default function Footer() {
                 </svg>
                 info@yuriscarpetcleaning.com
               </a>
-              <div className="flex items-center gap-3 text-sm text-[#D6DEE8]">
+              <div className="flex items-center gap-3 text-sm text-[#5E6B78]">
                 <svg
                   className="h-4 w-4 shrink-0"
                   fill="none"
@@ -136,7 +137,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 border-t border-[rgba(255,255,255,0.08)] pt-8">
+        <div className="mt-16 border-t border-white/[0.04] pt-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <p className="text-sm text-[#5E6B78]">
               &copy; 2026 Yuri&apos;s Carpet Cleaning. All Rights Reserved.
@@ -144,19 +145,19 @@ export default function Footer() {
             <div className="flex items-center gap-6">
               <Link
                 href="/privacy"
-                className="text-sm text-[#5E6B78] transition-colors hover:text-[#D6DEE8]"
+                className="text-sm text-[#5E6B78] transition-colors hover:text-[#2F80ED]"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-sm text-[#5E6B78] transition-colors hover:text-[#D6DEE8]"
+                className="text-sm text-[#5E6B78] transition-colors hover:text-[#2F80ED]"
               >
                 Terms
               </Link>
               <Link
                 href="/sitemap.xml"
-                className="text-sm text-[#5E6B78] transition-colors hover:text-[#D6DEE8]"
+                className="text-sm text-[#5E6B78] transition-colors hover:text-[#2F80ED]"
               >
                 Sitemap
               </Link>
