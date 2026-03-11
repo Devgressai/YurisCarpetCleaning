@@ -1,112 +1,97 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
-const proofBlocks = [
+const reasons = [
   {
-    title: "27 Years Experience",
-    description:
-      "Decades of professional carpet and tile work across the greater Sacramento area.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z" />
-      </svg>
-    ),
+    number: "01",
+    title: "Owner-Operated",
+    description: "You work directly with Yuri — an experienced professional who personally handles every job. No subcontractors. No runaround.",
   },
   {
-    title: "Owner-Operated Service",
-    description:
-      "You work directly with an experienced professional who cares about the final result.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0" />
-      </svg>
-    ),
+    number: "02",
+    title: "27 Years in the Field",
+    description: "Nearly three decades of hands-on carpet and tile work across the greater Sacramento area. We've seen it all.",
   },
   {
-    title: "Powerful Deep Cleaning",
-    description:
-      "Truck-mounted hot water extraction that removes what vacuums and rental machines leave behind.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-      </svg>
-    ),
+    number: "03",
+    title: "Truck-Mounted Power",
+    description: "Industrial-grade hot water extraction that removes what rental machines and vacuum cleaners leave behind.",
   },
   {
-    title: "Safe Cleaning Solutions",
-    description:
-      "pH-balanced, fiber-specific chemistry that\u2019s safe for families and pets.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-      </svg>
-    ),
+    number: "04",
+    title: "Safe for Families & Pets",
+    description: "pH-balanced, fiber-specific chemistry. No harsh residue. Just clean, safe floors for your household.",
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0, 0, 0.2, 1] as const } },
-};
-
 export default function WhyYuris() {
   return (
-    <section className="bg-[#0B1420] py-20 px-6 md:px-12 lg:px-20">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-        {/* Left side */}
-        <motion.div
-          className="lg:sticky lg:top-32"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <h2 className="font-[family-name:var(--font-manrope)] text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-6">
-            Why Homeowners Choose Yuri&apos;s
-          </h2>
-          <p className="text-[#D6DEE8] text-lg leading-relaxed max-w-md">
-            With 27 years of hands-on experience, Yuri&apos;s Carpet Cleaning
-            focuses on honest service, visible results, and dependable work that
-            homeowners, landlords, and property managers can count on.
-          </p>
-        </motion.div>
+    <section className="bg-[#0B1420] py-28 md:py-36 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+          {/* Left - Sticky heading + image */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="lg:sticky lg:top-32"
+          >
+            <p className="text-[#2F80ED] text-xs font-bold uppercase tracking-widest mb-4">
+              Why Choose Us
+            </p>
+            <h2 className="font-[family-name:var(--font-manrope)] text-4xl md:text-5xl font-extrabold text-[#F8FAFC] leading-tight mb-6">
+              Why Homeowners
+              <br />
+              Choose Yuri&apos;s
+            </h2>
+            <p className="text-[#D6DEE8] text-lg leading-relaxed mb-8 max-w-md">
+              With 27 years of hands-on experience, we focus on honest service,
+              visible results, and dependable work that homeowners, landlords,
+              and property managers count on.
+            </p>
+            <div className="relative rounded-2xl overflow-hidden">
+              <Image
+                src="/images/yuri-portrait.png"
+                alt="Yuri - Owner and master carpet cleaning professional"
+                width={500}
+                height={400}
+                className="w-full h-auto object-cover rounded-2xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1420]/60 to-transparent" />
+            </div>
+          </motion.div>
 
-        {/* Right side — proof blocks in 2x2 grid */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 gap-4"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {proofBlocks.map((block) => (
-            <motion.div
-              key={block.title}
-              variants={itemVariants}
-              className="bg-[#111C2B] rounded-xl p-6 border border-[rgba(255,255,255,0.08)]"
-            >
-              <div className="w-11 h-11 rounded-full bg-[#2F80ED]/15 flex items-center justify-center text-[#2F80ED] mb-4">
-                {block.icon}
-              </div>
-              <h3 className="font-bold text-[#F8FAFC] text-lg mb-1">
-                {block.title}
-              </h3>
-              <p className="text-[#D6DEE8] text-sm leading-relaxed">
-                {block.description}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
+          {/* Right - Numbered reasons */}
+          <div className="space-y-6">
+            {reasons.map((reason, i) => (
+              <motion.div
+                key={reason.number}
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group relative bg-[#111C2B] rounded-2xl p-8 border border-white/[0.06] hover:border-[#2F80ED]/20 transition-all duration-500"
+              >
+                <div className="flex gap-6">
+                  <span className="text-5xl font-extrabold text-[#2F80ED]/20 font-[family-name:var(--font-manrope)] select-none shrink-0">
+                    {reason.number}
+                  </span>
+                  <div>
+                    <h3 className="font-[family-name:var(--font-manrope)] text-xl font-bold text-[#F8FAFC] mb-2">
+                      {reason.title}
+                    </h3>
+                    <p className="text-[#D6DEE8] leading-relaxed">
+                      {reason.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
